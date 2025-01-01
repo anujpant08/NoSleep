@@ -1,26 +1,29 @@
-//
-//  ContentView.swift
-//  NoSleep
-//
-//  Created by Anuj Pant on 29/12/24.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     
-    @State private var buttonPressed: Bool = false
-    @State var textValue: String = ""
+    @State var timerValue: String = ""
+    @State private var validInput: Bool = true
+    @State private var actionSuccesful: Bool = false
+    let noSleepApp = NoSleepApp()
     
     var body: some View {
         VStack {
             TextField(
                 "Enter a value",
-                text: self.$textValue
+                text: self.$timerValue
             )
+            .onChange(of: timerValue) {
+                oldValue, newValue in actionSuccesful = false
+            }
             .padding(.all)
+            if (!validInput) {
+                Label("Please enter numbers only.", systemImage: "exclamationmark.triangle.fill")
+                    .foregroundColor(.red)
+                    .font(.caption)
+            }
             Text(
-                "Enter a value less than your system's sleep timer"
+                "Enter no. of minutes less than your system's sleep timer"
             )
             .padding(.init(top: 0, leading: 0, bottom: 5, trailing: 0))
             Text(
@@ -29,20 +32,43 @@ struct ContentView: View {
             .colorMultiply(.secondary)
             .padding(.bottom)
             Button(
-                "Set No Sleep Limit"
+                action: {
+                    validInput = isValidInput(self.$timerValue.wrappedValue)
+                    if (validInput) {
+                        print("Setting no sleep limit")
+                        let result = noSleepApp.scheduleChangeMouseLocation(timerValue)
+                        if(!result) {
+                            print("Error setting no sleep limit")
+                        } else {
+                            actionSuccesful = true
+                        }
+                    }
+                }
             ){
-                print("Setting no sleep limit")
-                buttonPressed = true
+                Text ("Set No Sleep Limit")
+                    .foregroundColor(.white)
+            }
+            .alert("No-Sleep timer set successfully!", isPresented: $actionSuccesful) {
+                Button("OK", role: .cancel) {}
             }
             .buttonStyle(.borderedProminent)
             .tint(.accentColor)
-            if (buttonPressed) {
-                Text("No sleep limit set to " + textValue)
-                // Logic to avoid sleep...
-            }
         }
         .padding()
     }
+    
+    private func isValidInput(_ text: String) -> Bool {
+        if (text.isEmpty) {
+            return false
+        }
+        // Check if the input contains only digits
+        if text.range(of: "^[0-9]*$", options: .regularExpression) == nil {
+            return false
+        } else {
+            return true
+        }
+    }
+    
 }
 
 #Preview {
