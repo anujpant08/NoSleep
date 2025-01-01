@@ -10,9 +10,11 @@
 
 <p>1. Checkout Releases section at the right</p>
 
-<p>2. Download the latest app</p>
+<p>2. Download the app "NoSleep.app.zip" from the latest release </p>
 
-<p>3. Start using the app</p>
+<p>3. Unzip the file and start using the app</p>
+
+<p>4. The app instructions are pretty intuitive and easy to follow </p>
 
 #### Important: Please make sure the app is running in the background for it to work as intended. </p>
 
