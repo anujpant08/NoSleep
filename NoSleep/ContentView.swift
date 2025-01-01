@@ -14,7 +14,7 @@ struct ContentView: View {
                 text: self.$timerValue
             )
             .onChange(of: timerValue) {
-                oldValue, newValue in actionSuccesful = false
+                newValue in actionSuccesful = false
             }
             .padding(.all)
             if (!validInput) {
