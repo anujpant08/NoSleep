@@ -1,34 +1,42 @@
-<h1 align="left" id="title">NoSleep - Reset your Mac sleep timer</h1>
 
-<p id="description">An app for bypassing the Mac OS sleep/display-off cycles.</p>
+# NoSleep - Reset your Mac sleep timer
 
- <h2> Introduction </h2>
-<p>This project is created with an intent to solve a very annoying problem, "The Mac Sleep Timer". This utility app comes in handy especially when the device is owned by organisations and they don't allow you to modify Mac display settings.</p>
-<p>There are few solutions present in the market but they don't seem to work the exactly I want or have some dodgy permission requests form the user. So I created an open-source solution which can be used by anyone free of charge and contribute to it.</p>
+An app for bypassing the Mac OS sleep/display-off cycles.
 
-<h2>Installation Steps</h2>
+## Introduction
+This project is created with an intent to solve a very annoying problem, "The Mac Sleep Timer". This utility app comes in handy especially when the device is owned by organisations and they don't allow you to modify Mac display settings.
 
-<p>1. Checkout Releases section at the right</p>
+There are few solutions present in the market but they don't seem to work the exactly I want or have some dodgy permission requests form the user. So I created an open-source solution which can be used by anyone free of charge and contribute to it.
+## Installation
 
-<p>2. Download the app "NoSleep.app.zip" from the latest release </p>
+1. Checkout Releases section at the right
 
-<p>3. Unzip the file and start using the app</p>
+2. Download the app "NoSleep.app.zip" from the latest release
 
-<p>4. The app instructions are pretty intuitive and easy to follow </p>
+3. Unzip the file and start using the app
 
-#### Important: Please make sure the app is running in the background for it to work as intended. </p>
+4. Sometimes Mac won't allow to open the app. In that case run the following command at your download directory:
 
-<h2> Contribution</h2>
+```bash
+  chmod +x NoSleep.app/Contents/MacOS/NoSleep
+```
+5. Then right click on the app to start using the app.
 
-<p>Find something that can be improved? Follow the steps to raise PR for improvements/bug fixes:</p>
+4. The app instructions are pretty intuitive and easy to follow
 
-<p>1. Checkout the "main" branch </p>
+#### Important: Please make sure the app is running in the background for it to work as intended.
 
-<p>2. Create new branch for your changes </p>
+## Contributing
 
-<p>3. Do the changes and raise PR against "main" </p>
+Find something that can be improved? Follow the steps to raise PR for improvements/bug fixes:
+1. Checkout the "main" branch
 
-<p>4. Post approval the changes would be merged </p>
+2. Create new branch for your changes
 
-<h2>Like my work?</h2>
+3. Do the changes and raise PR against "main"
+
+4. Post approval the changes would be merged
+
+
+## Like my work?
 Feel free to star this repository if you found it helpful for your use case and recommend it to your friends if they are facing the same problem.
